@@ -1,0 +1,22 @@
+h1{
+	color: #a83a3a;
+}
+h2{
+	color: green;
+}
+h3{
+	color: orange;
+}
+p{
+	color: blue;
+}
+.description{
+	color:yellow;
+}
+.button{
+	background: #05b993;
+	color: white;
+	border-radius: 5px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
