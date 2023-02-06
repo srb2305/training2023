@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../js/jquery.min.js"></script>
+	<style type="text/css">
+		#div1{
+			height: 200px;
+			width: 200px;
+			background: red;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery</h1>
+	<input type="button" value="Click Me" id="btn1">
+	<input type="button" value="Hide Div" id="hide_div">
+	<input type="button" value="Show Div" id="show_div">
+	<input type="button" value="toggle" id="toggle_div">
+	<input type="button" value="Fade" id="fade_div">
+	<input type="button" value="Text Change" id="text_change">
+	<input type="button" value="Color Change" id="color_change">
+
+	<div id="div1">
+		Hello Hw are u?
+	</div>
+
+	<script type="text/javascript">
+		$(document).on('click','#btn1',function(){
+			alert('Hello');
+		});
+
+		$(document).on('click','#hide_div',function(){
+			$('#div1').hide();
+		});
+
+		$(document).on('click','#show_div',function(){
+			$('#div1').show();
+		});
+
+		$(document).on('click','#toggle_div',function(){
+			$('#div1').toggle();
+		});
+
+		$(document).on('click','#fade_div',function(){
+			$('#div1').toggle(1000);
+		});
+
+		$(document).on('click','#text_change',function(){
+			$('#div1').html('<b>fafafafafafa</b>');
+		});
+
+		$(document).on('click','#color_change',function(){
+			$('#div1').css('background','orange');
+			$('#div1').css('color','red');
+			$('#div1').css('border-radius','50%');
+
+			$('body').css('background','gray');
+		});
+	</script>
+</body>
+</html>

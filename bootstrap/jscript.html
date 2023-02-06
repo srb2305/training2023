@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../js/jquery.min.js"></script>
+	<style type="text/css">
+		#firstName{
+			background: orange;
+		}
+		#mobilenumber{
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<h1>Javascript</h1>
+	First Name : <input type="text" id="firstName" name="firstName"><br>
+	Mobile no.:<input type="number" id="mobilenumber" name="number">
+	<p id="output"></p>
+
+	<script type="text/javascript">
+		// alert('Hello, how are u?');
+		// alert('Saved successflly...');
+		// console.log('Saved successflly2222');
+		$(document).on('keyup','#firstName',function(){
+			var firstName = $('#firstName').val();
+			//console.log($('#firstName').val());
+			$('#output').html(firstName);
+
+		});
+	</script>
+</body>
+</html>
