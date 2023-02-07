@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../js/jquery.min.js"></script>
+	<style type="text/css">
+		.div1{
+			height: 200px;
+			width: 200px;
+			background-color: red; 
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="hide" onclick="hidefunction()">
+	<input type="button" value="show" onclick="showfunction()">
+	<input type="button" value="fade" onclick="fadefunction()">
+	
+	<input type="button" value="MultiFunction" onclick="multiChange()">
+
+	<div class="div1"></div>
+
+	<script type="text/javascript">
+		
+		function hidefunction(){
+			$('.div1').hide();		
+		}
+		function showfunction(){
+			$('.div1').show();		
+		}
+		function fadefunction(){
+			$('.div1').toggle();		
+		}
+
+		function multiChange(){
+			changeColor();
+			heightChange();
+			widthChange();
+			colorChangeMultiple();
+		}
+
+		function changeColor(){
+			$('.div1').css('background-color','orange');	
+		}
+		function heightChange(){
+			$('.div1').animate({'height':'+=200px'},5000);	
+		}
+		function widthChange(){
+			$('.div1').animate({'width':'+=200px'},5000);	
+			$('.div1').css({
+				'background-color':'orange'
+			});
+		}
+		
+		var i = 0;
+		function colorChangeMultiple() {
+		  setTimeout(function() { 
+		  	var colors = ['green','red','blue','orange','black','white','gray','yellow'];
+		    if (i < 7) {
+		    	console.log(colors[i]);
+			    $('.div1').css({'background-color':colors[i]});
+			      colorChangeMultiple();  
+		    	i++;                   
+			    }
+		  }, 1000)
+		}
+
+		
+	</script>
+</body>
+</html>

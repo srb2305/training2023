@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../js/jquery.min.js"></script>
+	<style type="text/css">
+		.mydiv1,.mydiv2{
+			background: red;
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<h1>Events</h1>
+	<ul>
+		<li>Click</li>
+		<li>Keyup</li>
+		<li>Keydown</li>
+		<li>onHover</li>
+		<li>dblclick</li>
+		<li>mouseenter</li>
+		<li>mouseleave</li>
+	</ul>
+
+	<h1>jQuery Functions</h1>
+	<ul>
+		<li>show</li>
+		<li>hide</li>
+		<li>toggle</li>
+		<li>fade</li>
+		<li>Animation</li>
+		<li>stop</li>
+		<li>Callback</li>
+		<li>Chaining</li>
+	</ul>
+
+
+	<a href="#" id="animate_function">Go to left/Animate</a>
+	<a href="javascript::void(0)" id="animate_function2">Go to left/Animate</a>
+	<div class="mydiv1"></div>
+	<div class="mydiv2"></div>
+
+
+	<script type="text/javascript">
+		$(document).on('click','#animate_function',function(){
+			$('.mydiv1').animate({'margin-left':'400px'},5000);
+			$('.mydiv1').css({'background':'green'});
+		});
+
+		$(document).on('click','#animate_function2',function(){
+			$('.mydiv2').animate(
+				{
+					'margin-left':'+=200px'
+				},2000);
+		});
+
+		$(document).on('mouseenter','.mydiv2',function(){
+			$('.mydiv2').css({
+				'border-radius':0,
+				'background': 'orange'
+			})
+		});
+
+		$(document).on('mouseleave','.mydiv2',function(){
+			$('.mydiv2').css({
+				'border-radius':'50%',
+				'background': 'red'
+			})
+		});
+	</script>
+</body>
+</html>
