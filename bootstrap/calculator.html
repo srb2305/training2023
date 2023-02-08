@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<input type="number" id="number1" placeholder="Enter number 1">
+	<input type="number" id="number2" placeholder="Enter number 2"><br>
+	
+	<input type="button" id="addition" value="+">
+	<input type="button" id="subtraction" value="-">
+	<input type="button" id="multiplication" value="*">
+	<input type="button" id="division" value="/">
+	<br>
+
+
+	<h4>Your result is: <span id="output"></span></h4>
+	<br>
+	<input type="button" value="1" onclick="enterInput(1)">
+	<input type="button" value="2" onclick="enterInput(2)">
+	<input type="button" value="3" onclick="enterInput(3)"><br>
+	<input type="button" value="4" onclick="enterInput(4)">
+	<input type="button" value="5" onclick="enterInput(5)">
+	<input type="button" value="6" onclick="enterInput(6)"><br>
+	<input type="button" value="7" onclick="enterInput(7)">
+	<input type="button" value="8" onclick="enterInput(8)">
+	<input type="button" value="9" onclick="enterInput(9)"><br>
+	<input type="button" value="0" onclick="enterInput(0)">
+	<input type="button" value="C" onclick="clearInput()">
+
+	<script type="text/javascript">
+		$(document).on('click','#addition',function(){
+			var a = $('#number1').val();
+			var b = $('#number2').val();
+			var c = parseInt(a) + parseInt(b);
+			$('#output').html(c);
+		});
+
+		$(document).on('click','#subtraction',function(){
+			var a = $('#number1').val();
+			var b = $('#number2').val();
+			var c = parseInt(a) - parseInt(b);
+			$('#output').html(c);
+		});
+
+		$(document).on('click','#multiplication',function(){
+			var a = $('#number1').val();
+			var b = $('#number2').val();
+			var c = parseInt(a) * parseInt(b);
+			$('#output').html(c);
+		});
+
+		$(document).on('click','#division',function(){
+			var a = $('#number1').val();
+			var b = $('#number2').val();
+			var c = parseInt(a) / parseInt(b);
+			$('#output').html(c);
+		});
+
+		function enterInput(input1){
+			var a = $('#number1').val();
+			var newVal = a+input1;
+			$('#number1').val(newVal);
+		}
+
+		function clearInput(){
+			$('#number1').val(null);
+		}
+	</script>
+</body>
+</html>
