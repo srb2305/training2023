@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calculator</title>
+	<title></title>
 	<script src="../js/jquery.min.js"></script>
 	<style type="text/css">
 		.active{
@@ -12,17 +12,15 @@
 	</style>
 </head>
 <body>
-	<h1>Calculator</h1>
+	<h1>Mathametics</h1>
 	<input type="number" id="number1" placeholder="Enter number 1" class="active">
 	<input type="number" id="number2" placeholder="Enter number 2"><br>
 	
-	<input type="button" id="addition" value="+">
-	<input type="button" id="subtraction" value="-">
-	<input type="button" id="multiplication" value="*">
-	<input type="button" id="division" value="/">
+	<input type="button" id="addition" value="+" onclick="mathamatics('+')">
+	<input type="button" id="subtraction" value="-" onclick="mathamatics('-')">
+	<input type="button" id="multiplication" value="*" onclick="mathamatics('*')">
+	<input type="button" id="division" value="/" onclick="mathamatics('/')">
 	<br>
-
-
 	<h4>Your result is: <span id="output"></span></h4>
 	<br>
 	<input type="button" value="1" onclick="enterInput(1)">
@@ -38,34 +36,21 @@
 	<input type="button" value="C" onclick="clearInput()">
 
 	<script type="text/javascript">
-		$(document).on('click','#addition',function(){
+		function mathamatics(operation){
 			var a = $('#number1').val();
 			var b = $('#number2').val();
-			var c = parseInt(a) + parseInt(b);
+			if(operation == '+'){
+				var c = parseInt(a) + parseInt(b);
+			}else if(operation == '-'){
+				var c = parseInt(a) - parseInt(b);
+			}else if(operation == '*'){
+				var c = parseInt(a) * parseInt(b);
+			}else{
+				var c = parseInt(a) / parseInt(b);
+			}
 			$('#output').html(c);
-		});
-
-		$(document).on('click','#subtraction',function(){
-			var a = $('#number1').val();
-			var b = $('#number2').val();
-			var c = parseInt(a) - parseInt(b);
-			$('#output').html(c);
-		});
-
-		$(document).on('click','#multiplication',function(){
-			var a = $('#number1').val();
-			var b = $('#number2').val();
-			var c = parseInt(a) * parseInt(b);
-			$('#output').html(c);
-		});
-
-		$(document).on('click','#division',function(){
-			var a = $('#number1').val();
-			var b = $('#number2').val();
-			var c = parseInt(a) / parseInt(b);
-			$('#output').html(c);
-		});
-
+		}
+		
 		function enterInput(input1){
 			if($('#number1').hasClass('active')){
 				var a = $('#number1').val();
