@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../js/jquery.min.js"></script>
+	<style type="text/css">
+		.main,.main2{
+			width: 50%;
+			border: 1px solid gray;
+		}
+		.heading{
+			font-size: 28px;
+			font-weight: 500;
+			border-bottom: 1px solid gray;
+			cursor: pointer;
+			background: #d3d3d370;
+		}
+		.body{
+			display: none;
+		}
+		.active .body{
+			display: block;
+		}
+		.active .heading{
+			background: lightblue;
+		}
+		.heading span{
+			float: right;
+			font-size: 15px;
+
+		}
+		.heading:hover{
+			background: blue;
+		}
+		a:hover{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Accordian</h1>
+	<a href="">Home</a>
+	<div class="main2 active">
+		<div class="heading">
+			This is heading
+			<span>open</span>
+		</div>
+		<div class="body">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="heading">
+			This is heading
+			<span>open</span>
+		</div>
+		<div class="body">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="heading">
+			This is heading
+			<span>close</span>
+		</div>
+		<div class="body">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="heading">
+			This is heading
+			<span>close</span>
+		</div>
+		<div class="body">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../js/custom.js"></script>
+</body>
+</html>

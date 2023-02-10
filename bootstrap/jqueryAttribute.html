@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Attribute Selector</h1>
+	<table border="1">
+		<thead>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Contact</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Ram</td>
+				<td>ram@gmail.com</td>
+				<td>989898989</td>
+				<td>
+					<a href="#" class="view" data-id="1" data-name="ram">view</a>
+					<a href="#" class="delete" data-id="1">delete</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td>Shyam</td>
+				<td>shyam@gmail.com</td>
+				<td>88888888</td>
+				<td>
+					<a href="#" class="view" data-id="2" data-name="shyam">view</a>
+					<a href="#" class="delete" data-id="2">delete</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td>3</td>
+				<td>mohan</td>
+				<td>mohan@gmail.com</td>
+				<td>77777777</td>
+				<td>
+					<a href="#" class="view" data-id="3" data-name="mohan">view</a>
+					<a href="#" class="delete" data-id="3">delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div id="showData"></div>
+
+	<script type="text/javascript">
+		$(document).on('click','.view',function(){
+			var id = $(this).data('id');
+			var name = $(this).data('name');
+			$('#showData').html('You selected id =>'+ id + ' You selected value of=>'+ name);
+		});
+
+		$(document).on('click','.delete',function(){
+			$(this).closest('tr').remove();
+		});
+	</script>
+</body>
+</html>
